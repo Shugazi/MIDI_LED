@@ -3,10 +3,10 @@ import mido
 
 # LED strip configuration
 LED_COUNT = 10
-LED_PIN = 13
+LED_PIN = 18
 LED_FREQ_HZ = 800000
 LED_DMA = 10
-LED_BRIGHTNESS = 100
+LED_BRIGHTNESS = 50
 LED_INVERT = False
 
 # Initialize the LED strip
