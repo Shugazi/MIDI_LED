@@ -1,7 +1,7 @@
 import mido
 
 # Get the name of the input port for your digital piano
-input_port_name = "Midi Through:Midi Through Port-0 14:0"  # Replace with the name of your MIDI input port
+input_port_name = "CH345:CH345 MIDI 1 20:0"  # Replace with the name of your MIDI input port
 
 # Open a connection to the input port
 input_port = mido.open_input(input_port_name)
