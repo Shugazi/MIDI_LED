@@ -2,7 +2,7 @@ from rpi_ws281x import PixelStrip, Color
 
 # LED strip configuration
 LED_COUNT = 10
-LED_PIN = 4
+LED_PIN = 27
 LED_FREQ_HZ = 800000
 LED_DMA = 10
 LED_BRIGHTNESS = 100
