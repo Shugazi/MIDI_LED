@@ -3,7 +3,7 @@ import mido
 import time
 
 # LED strip configuration
-LED_COUNT = 10
+LED_COUNT = 242
 LED_PIN = 18
 LED_FREQ_HZ = 800000
 LED_DMA = 10
@@ -54,10 +54,12 @@ def led_color(number):
 # Creating the logic of the fun for note to led
 def note_2_led(note_num):
     # Map the number to an LED index (0-9)
-    led_index = note_num % 10
 
     # Set the LED color
-    strip.setPixelColor(led_index, led_color(led_index))
+    strip.setPixelColor(note_num+10, led_color(led_index))
+    strip.setPixelColor(note_num+15, led_color(led_index))
+    strip.setPixelColor(note_num-10, led_color(led_index))
+    strip.setPixelColor(note_num-15, led_color(led_index))
     strip.show()
 
 
@@ -83,8 +85,11 @@ try:
 
             note_number = message.note
 
-            led_index = note_number % 10
-            strip.setPixelColor(led_index, led_color(10))
+            strip.setPixelColor(note_number+10, led_color(10))
+            strip.setPixelColor(note_number+15, led_color(10))
+            strip.setPixelColor(note_number-10, led_color(10))
+            strip.setPixelColor(note_number-15, led_color(10))
+
             strip.show()
 
 
