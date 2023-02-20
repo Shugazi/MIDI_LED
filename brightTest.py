@@ -15,5 +15,5 @@ strip = PixelStrip(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRI
 strip.begin()
 
 # Set the LED color
-strip.setPixelColor(0, 255 * LED_BRIGHTNESS, 0, 0)
+strip.setPixelColor(0, Color(255 * LED_BRIGHTNESS, 0, 0))
 strip.show()
