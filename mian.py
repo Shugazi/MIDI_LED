@@ -60,6 +60,11 @@ def note_2_led(note_num):
     strip.setPixelColor(note_num+15, led_color(led_index))
     strip.setPixelColor(note_num-10, led_color(led_index))
     strip.setPixelColor(note_num-15, led_color(led_index))
+
+    strip.setPixelColor(LED_COUNT - (note_num+10), led_color(led_index))
+    strip.setPixelColor(LED_COUNT - note_num+15, led_color(led_index))
+    strip.setPixelColor(LED_COUNT - note_num-10, led_color(led_index))
+    strip.setPixelColor(LED_COUNT -note_num-15, led_color(led_index))
     strip.show()
 
 
@@ -89,6 +94,11 @@ try:
             strip.setPixelColor(note_number+15, led_color(10))
             strip.setPixelColor(note_number-10, led_color(10))
             strip.setPixelColor(note_number-15, led_color(10))
+
+            strip.setPixelColor(LED_COUNT - note_number+10, led_color(10))
+            strip.setPixelColor(LED_COUNT -note_number+15, led_color(10))
+            strip.setPixelColor(LED_COUNT - note_number-10, led_color(10))
+            strip.setPixelColor(LED_COUNT -note_number-15, led_color(10))
 
             strip.show()
 
