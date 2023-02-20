@@ -51,8 +51,6 @@ def led_color(number):
     return color
 
 
-
-
 # Creating the logic of the fun for note to led
 def note_2_led(note_num):
     # Map the number to an LED index (0-9)
@@ -62,6 +60,10 @@ def note_2_led(note_num):
     strip.setPixelColor(led_index, led_color(led_index))
     strip.show()
 
+
+for i in range(strip.numPixels()):
+    strip.setPixelColor(i, led_color(7))
+strip.show()
 
 # Print a message to indicate that the program is ready to receive notes
 print("Ready to receive notes...")
