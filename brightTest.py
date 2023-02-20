@@ -73,7 +73,7 @@ def led_color_decay(number, decay):
     elif number == 9:
         color = Color(abs(127-decay), 0, abs(255-decay))  # Purple
     elif number == 0:
-        color = Color(0, (abs(127-decay), abs(255-decay)))  # Teal
+        color = Color(0, abs(127-decay), abs(255-decay))  # Teal
     else:
         color = Color(0, 0, 0)  # Off
 
