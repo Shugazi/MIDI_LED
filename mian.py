@@ -103,7 +103,7 @@ try:
             # Print the note number and velocity to the console
             print("Note: {}, Velocity: {}".format(note_number, velocity))
             note_2_led(int(note_number))
-        elif message.type == "note_off":
+        """elif message.type == "note_off":
 
             note_number = message.note
 
@@ -116,7 +116,7 @@ try:
                 else:
                     strip.setPixelColor(led_index, )
                 strip.show()
-
+"""
 
 except KeyboardInterrupt:
     for i in range(strip.numPixels()):
