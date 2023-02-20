@@ -54,17 +54,22 @@ def led_color(number):
 # Creating the logic of the fun for note to led
 def note_2_led(note_num):
     # Map the number to an LED index (0-9)
-    led_index = note_num%10
+    led_index = note_num % 10
     # Set the LED color
-    strip.setPixelColor(note_num+10, led_color(led_index))
-    strip.setPixelColor(note_num+15, led_color(led_index))
-    strip.setPixelColor(note_num-10, led_color(led_index))
-    strip.setPixelColor(note_num-15, led_color(led_index))
+    strip.setPixelColor(note_num + 10, led_color(3))
+    strip.setPixelColor(note_num + 15, led_color(3))
+    strip.setPixelColor(note_num + 20, led_color(3))
+    strip.setPixelColor(note_num - 10, led_color(3))
+    strip.setPixelColor(note_num - 15, led_color(3))
+    strip.setPixelColor(note_num - 20, led_color(3))
 
-    strip.setPixelColor(LED_COUNT - (note_num+10), led_color(led_index))
-    strip.setPixelColor(LED_COUNT - note_num+15, led_color(led_index))
-    strip.setPixelColor(LED_COUNT - note_num-10, led_color(led_index))
-    strip.setPixelColor(LED_COUNT -note_num-15, led_color(led_index))
+    strip.setPixelColor(LED_COUNT - (note_num + 10), led_color(3))
+    strip.setPixelColor(LED_COUNT - note_num + 15, led_color(3))
+    strip.setPixelColor(LED_COUNT - note_num - 10, led_color(3))
+    strip.setPixelColor(LED_COUNT - note_num - 15, led_color(3))
+    strip.setPixelColor(LED_COUNT - note_num - 20, led_color(3))
+    strip.setPixelColor(LED_COUNT - note_num + 20, led_color(3))
+
     strip.show()
 
 
@@ -90,15 +95,15 @@ try:
 
             note_number = message.note
 
-            strip.setPixelColor(note_number+10, led_color(10))
-            strip.setPixelColor(note_number+15, led_color(10))
-            strip.setPixelColor(note_number-10, led_color(10))
-            strip.setPixelColor(note_number-15, led_color(10))
+            strip.setPixelColor(note_number + 10, led_color(10))
+            strip.setPixelColor(note_number + 15, led_color(10))
+            strip.setPixelColor(note_number - 10, led_color(10))
+            strip.setPixelColor(note_number - 15, led_color(10))
 
-            strip.setPixelColor(LED_COUNT - note_number+10, led_color(10))
-            strip.setPixelColor(LED_COUNT -note_number+15, led_color(10))
-            strip.setPixelColor(LED_COUNT - note_number-10, led_color(10))
-            strip.setPixelColor(LED_COUNT -note_number-15, led_color(10))
+            strip.setPixelColor(LED_COUNT - note_number + 10, led_color(10))
+            strip.setPixelColor(LED_COUNT - note_number + 15, led_color(10))
+            strip.setPixelColor(LED_COUNT - note_number - 10, led_color(10))
+            strip.setPixelColor(LED_COUNT - note_number - 15, led_color(10))
 
             strip.show()
 
