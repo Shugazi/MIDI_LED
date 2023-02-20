@@ -51,32 +51,6 @@ def led_color(number):
     return color
 
 
-def led_color_decay(number, decay):
-    # Set the LED color based on the number
-    if number == 1:
-        color = Color(255, 0, 0)  # Red
-    elif number == 2:
-        color = Color(0, 255, 0)  # Green
-    elif number == 3:
-        color = Color(0, 0, 255)  # Blue
-    elif number == 4:
-        color = Color(255, 255, 0)  # Yellow
-    elif number == 5:
-        color = Color(255, 0, 255)  # Magenta
-    elif number == 6:
-        color = Color(0, 255, 255)  # Cyan
-    elif number == 7:
-        color = Color(255, 255, 255)  # White
-    elif number == 8:
-        color = Color(255, 127, 0)  # Orange
-    elif number == 9:
-        color = Color(127, 0, 255)  # Purple
-    elif number == 0:
-        color = Color(0, 127, 255)  # Teal
-    else:
-        color = Color(0, 0, 0)  # Off
-
-    return color
 
 
 # Creating the logic of the fun for note to led
@@ -103,20 +77,16 @@ try:
             # Print the note number and velocity to the console
             print("Note: {}, Velocity: {}".format(note_number, velocity))
             note_2_led(int(note_number))
-        """elif message.type == "note_off":
+        elif message.type == "note_off":
 
             note_number = message.note
 
-            for i in range(decay_rate * 10):
-                time.sleep(0.1)
-                LED_BRIGHTNESS *= .9
-                led_index = note_number % 10
-                if LED_BRIGHTNESS == 0:
-                    strip.setPixelColor(led_index, Color(0, 0, 0))
-                else:
-                    strip.setPixelColor(led_index, )
-                strip.show()
-"""
+            led_index = note_number % 10
+            strip.setPixelColor(led_index, led_color(10))
+            strip.show()
+
+
+
 
 except KeyboardInterrupt:
     for i in range(strip.numPixels()):
