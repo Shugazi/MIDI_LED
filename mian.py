@@ -97,11 +97,17 @@ try:
             strip.setPixelColor(note_number + 15, led_color(10))
             strip.setPixelColor(note_number - 10, led_color(10))
             strip.setPixelColor(note_number - 15, led_color(10))
+            strip.setPixelColor(note_number - 20, led_color(10))
+            strip.setPixelColor(note_number + 20, led_color(10))
+
 
             strip.setPixelColor(LED_COUNT - note_number + 10, led_color(10))
             strip.setPixelColor(LED_COUNT - note_number + 15, led_color(10))
             strip.setPixelColor(LED_COUNT - note_number - 10, led_color(10))
             strip.setPixelColor(LED_COUNT - note_number - 15, led_color(10))
+            strip.setPixelColor(LED_COUNT - note_number - 20, led_color(10))
+            strip.setPixelColor(LED_COUNT - note_number + 20, led_color(10))
+
 
             strip.show()
 
