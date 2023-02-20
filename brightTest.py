@@ -115,7 +115,7 @@ try:
                 if LED_BRIGHTNESS == 0:
                     strip.setPixelColor(led_index, Color(0, 0, 0))
                 else:
-                    strip.setPixelColor(led_index,led_color_decay(led_index,LED_BRIGHTNESS-LED_BRIGHTNESS_decay) )
+                    strip.setPixelColor(led_index,led_color_decay(led_index,int(LED_BRIGHTNESS-LED_BRIGHTNESS_decay)) )
                 strip.show()
 
 
