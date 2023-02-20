@@ -73,9 +73,7 @@ def note_2_led(note_num):
     strip.show()
 
 
-for i in range(strip.numPixels()):
-    strip.setPixelColor(i, led_color(7))
-strip.show()
+
 
 # Print a message to indicate that the program is ready to receive notes
 print("Ready to receive notes...")
