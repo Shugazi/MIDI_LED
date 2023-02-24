@@ -4,7 +4,7 @@ import mido
 # port = mido.open_output('Midi Through:Midi Through Port-0 14:0')
 # or
 port = mido.open_output("CH345:CH345 MIDI 1 20:0")
-file_name = f"Nuv.mid"
+file_name = f"Fairy.mid"
 
 from rpi_ws281x import PixelStrip, Color
 import mido
