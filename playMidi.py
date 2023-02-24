@@ -4,7 +4,14 @@ import mido
 # port = mido.open_output('Midi Through:Midi Through Port-0 14:0')
 # or
 port = mido.open_output("CH345:CH345 MIDI 1 20:0")
-file_name = f"Fairy.mid"
+file_option = input("Song? :")
+
+if file_option == 1:
+    file_name = f"Fairy.mid"
+elif file_option == 2:
+    file_name = "Ramin_Djawadi_-_Westworld_Theme.mid"
+elif file_option == 3:
+    file_name = "The Legend of Zelda Ocarina of Time - Song of Storms.mid"
 
 from rpi_ws281x import PixelStrip, Color
 import mido
