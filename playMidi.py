@@ -15,11 +15,8 @@ def print_message(message):
         print('Note Off: Note = {}, Velocity = {}'.format(message.note, message.velocity))
 
 
-# Create a MIDI output port
-output_port = mido.open_output(port)
-
 # Load the MIDI file and play it while monitoring the messages
 with mido.MidiFile(file_name) as mid:
     for message in mid.play():
-        output_port.send(message)
+        port.send(message)
         print_message(message)
