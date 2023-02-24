@@ -68,7 +68,6 @@ def note_2_led(note_num):
         strip.setPixelColor(note_num + 15, led_color(led_color_num))
         strip.setPixelColor(note_num + 18, led_color(led_color_num))
 
-
         strip.setPixelColor(note_num - 3, led_color(led_color_num))
         strip.setPixelColor(note_num - 6, led_color(led_color_num))
         strip.setPixelColor(note_num - 9, led_color(led_color_num))
@@ -85,7 +84,6 @@ def note_2_led(note_num):
         strip.setPixelColor(LED_COUNT - note_num - 12, led_color(led_color_num))
         strip.setPixelColor(LED_COUNT - note_num - 15, led_color(led_color_num))
         strip.setPixelColor(LED_COUNT - note_num - 18, led_color(led_color_num))
-
 
         strip.show()
     else:
@@ -116,28 +114,58 @@ def note_2_led(note_num):
 def note_2_led_off(note_num):
     # Map the number to an LED index (0-9)
     led_color_num = 10
-    # Set the LED color
-    strip.setPixelColor(note_num + 3, led_color(led_color_num))
-    strip.setPixelColor(note_num + 6, led_color(led_color_num))
-    strip.setPixelColor(note_num + 9, led_color(led_color_num))
-    strip.setPixelColor(note_num + 12, led_color(led_color_num))
 
-    strip.setPixelColor(note_num - 3, led_color(led_color_num))
-    strip.setPixelColor(note_num - 6, led_color(led_color_num))
-    strip.setPixelColor(note_num - 9, led_color(led_color_num))
-    strip.setPixelColor(note_num - 12, led_color(led_color_num))
+    if note_num >= 69:
 
-    strip.setPixelColor(LED_COUNT - note_num + 3, led_color(led_color_num))
-    strip.setPixelColor(LED_COUNT - note_num + 6, led_color(led_color_num))
-    strip.setPixelColor(LED_COUNT - note_num + 9, led_color(led_color_num))
-    strip.setPixelColor(LED_COUNT - note_num + 12, led_color(led_color_num))
+        # Set the LED color
+        strip.setPixelColor(note_num + 3, led_color(led_color_num))
+        strip.setPixelColor(note_num + 6, led_color(led_color_num))
+        strip.setPixelColor(note_num + 9, led_color(led_color_num))
+        strip.setPixelColor(note_num + 12, led_color(led_color_num))
+        strip.setPixelColor(note_num + 15, led_color(led_color_num))
+        strip.setPixelColor(note_num + 18, led_color(led_color_num))
 
-    strip.setPixelColor(LED_COUNT - note_num - 3, led_color(led_color_num))
-    strip.setPixelColor(LED_COUNT - note_num - 6, led_color(led_color_num))
-    strip.setPixelColor(LED_COUNT - note_num - 9, led_color(led_color_num))
-    strip.setPixelColor(LED_COUNT - note_num - 12, led_color(led_color_num))
+        strip.setPixelColor(note_num - 3, led_color(led_color_num))
+        strip.setPixelColor(note_num - 6, led_color(led_color_num))
+        strip.setPixelColor(note_num - 9, led_color(led_color_num))
+        strip.setPixelColor(note_num - 12, led_color(led_color_num))
 
-    strip.show()
+        strip.setPixelColor(LED_COUNT - note_num + 3, led_color(led_color_num))
+        strip.setPixelColor(LED_COUNT - note_num + 6, led_color(led_color_num))
+        strip.setPixelColor(LED_COUNT - note_num + 9, led_color(led_color_num))
+        strip.setPixelColor(LED_COUNT - note_num + 12, led_color(led_color_num))
+
+        strip.setPixelColor(LED_COUNT - note_num - 3, led_color(led_color_num))
+        strip.setPixelColor(LED_COUNT - note_num - 6, led_color(led_color_num))
+        strip.setPixelColor(LED_COUNT - note_num - 9, led_color(led_color_num))
+        strip.setPixelColor(LED_COUNT - note_num - 12, led_color(led_color_num))
+        strip.setPixelColor(LED_COUNT - note_num - 15, led_color(led_color_num))
+        strip.setPixelColor(LED_COUNT - note_num - 18, led_color(led_color_num))
+
+        strip.show()
+    else:
+        # Set the LED color
+        strip.setPixelColor(note_num + 3, led_color(led_color_num))
+        strip.setPixelColor(note_num + 6, led_color(led_color_num))
+        strip.setPixelColor(note_num + 9, led_color(led_color_num))
+        strip.setPixelColor(note_num + 12, led_color(led_color_num))
+
+        strip.setPixelColor(note_num - 3, led_color(led_color_num))
+        strip.setPixelColor(note_num - 6, led_color(led_color_num))
+        strip.setPixelColor(note_num - 9, led_color(led_color_num))
+        strip.setPixelColor(note_num - 12, led_color(led_color_num))
+
+        strip.setPixelColor(LED_COUNT - note_num + 3, led_color(led_color_num))
+        strip.setPixelColor(LED_COUNT - note_num + 6, led_color(led_color_num))
+        strip.setPixelColor(LED_COUNT - note_num + 9, led_color(led_color_num))
+        strip.setPixelColor(LED_COUNT - note_num + 12, led_color(led_color_num))
+
+        strip.setPixelColor(LED_COUNT - note_num - 3, led_color(led_color_num))
+        strip.setPixelColor(LED_COUNT - note_num - 6, led_color(led_color_num))
+        strip.setPixelColor(LED_COUNT - note_num - 9, led_color(led_color_num))
+        strip.setPixelColor(LED_COUNT - note_num - 12, led_color(led_color_num))
+
+        strip.show()
 
 
 # Define the callback function to print note_on and note_off messages
