@@ -23,6 +23,7 @@ decay_rate = 5
 strip = PixelStrip(LED_COUNT, LED_PIN, LED_FREQ_HZ, LED_DMA, LED_INVERT, LED_BRIGHTNESS)
 strip.begin()
 
+
 # Creating fun for color based on note
 def led_color(number):
     # Set the LED color based on the number
@@ -55,30 +56,54 @@ def led_color(number):
 # Creating the logic of the fun for note to led
 def note_2_led(note_num):
     # Map the number to an LED index (0-9)
-    led_color_num = 3 if note_num < 69 else 7
-    led_index = note_num % 10
-    # Set the LED color
-    strip.setPixelColor(note_num + 3, led_color(led_color_num))
-    strip.setPixelColor(note_num + 6, led_color(led_color_num))
-    strip.setPixelColor(note_num + 9, led_color(led_color_num))
-    strip.setPixelColor(note_num + 12, led_color(led_color_num))
+    if note_num < 69:
+        led_color_num = 3
+        # Set the LED color
+        strip.setPixelColor(note_num + 3, led_color(led_color_num))
+        strip.setPixelColor(note_num + 6, led_color(led_color_num))
+        strip.setPixelColor(note_num + 9, led_color(led_color_num))
+        strip.setPixelColor(note_num + 12, led_color(led_color_num))
 
-    strip.setPixelColor(note_num - 3, led_color(led_color_num))
-    strip.setPixelColor(note_num - 6, led_color(led_color_num))
-    strip.setPixelColor(note_num - 9, led_color(led_color_num))
-    strip.setPixelColor(note_num - 12, led_color(led_color_num))
+        strip.setPixelColor(note_num - 3, led_color(led_color_num))
+        strip.setPixelColor(note_num - 6, led_color(led_color_num))
+        strip.setPixelColor(note_num - 9, led_color(led_color_num))
+        strip.setPixelColor(note_num - 12, led_color(led_color_num))
 
-    strip.setPixelColor(LED_COUNT - note_num + 3, led_color(led_color_num))
-    strip.setPixelColor(LED_COUNT - note_num + 6, led_color(led_color_num))
-    strip.setPixelColor(LED_COUNT - note_num + 9, led_color(led_color_num))
-    strip.setPixelColor(LED_COUNT - note_num + 12, led_color(led_color_num))
+        strip.setPixelColor(LED_COUNT - note_num + 3, led_color(led_color_num))
+        strip.setPixelColor(LED_COUNT - note_num + 6, led_color(led_color_num))
+        strip.setPixelColor(LED_COUNT - note_num + 9, led_color(led_color_num))
+        strip.setPixelColor(LED_COUNT - note_num + 12, led_color(led_color_num))
 
-    strip.setPixelColor(LED_COUNT - note_num - 3, led_color(led_color_num))
-    strip.setPixelColor(LED_COUNT - note_num - 6, led_color(led_color_num))
-    strip.setPixelColor(LED_COUNT - note_num - 9, led_color(led_color_num))
-    strip.setPixelColor(LED_COUNT - note_num - 12, led_color(led_color_num))
+        strip.setPixelColor(LED_COUNT - note_num - 3, led_color(led_color_num))
+        strip.setPixelColor(LED_COUNT - note_num - 6, led_color(led_color_num))
+        strip.setPixelColor(LED_COUNT - note_num - 9, led_color(led_color_num))
+        strip.setPixelColor(LED_COUNT - note_num - 12, led_color(led_color_num))
 
-    strip.show()
+        strip.show()
+    else:
+        led_color_num = 7
+        # Set the LED color
+        strip.setPixelColor(note_num + 3, led_color(led_color_num))
+        strip.setPixelColor(note_num + 6, led_color(led_color_num))
+        strip.setPixelColor(note_num + 9, led_color(led_color_num))
+        strip.setPixelColor(note_num + 12, led_color(led_color_num))
+        strip.setPixelColor(note_num + 15, led_color(led_color_num))
+        strip.setPixelColor(note_num + 18, led_color(led_color_num))
+
+        strip.setPixelColor(note_num - 3, led_color(led_color_num))
+        strip.setPixelColor(note_num - 6, led_color(led_color_num))
+
+        strip.setPixelColor(LED_COUNT - note_num + 3, led_color(led_color_num))
+        strip.setPixelColor(LED_COUNT - note_num + 6, led_color(led_color_num))
+        strip.setPixelColor(LED_COUNT - note_num + 9, led_color(led_color_num))
+        strip.setPixelColor(LED_COUNT - note_num + 12, led_color(led_color_num))
+        strip.setPixelColor(LED_COUNT - note_num + 15, led_color(led_color_num))
+        strip.setPixelColor(LED_COUNT - note_num + 18, led_color(led_color_num))
+
+        strip.setPixelColor(LED_COUNT - note_num - 3, led_color(led_color_num))
+        strip.setPixelColor(LED_COUNT - note_num - 6, led_color(led_color_num))
+
+        strip.show()
 
 
 # Define the callback function to print note_on and note_off messages
@@ -88,12 +113,13 @@ def print_message(message):
     elif message.type == 'note_off':
         print('Note Off: Note = {}, Velocity = {}'.format(message.note, message.velocity))
 
+
 try:
     # Load the MIDI file and play it while monitoring the messages
     with mido.MidiFile(file_name) as mid:
         for message in mid.play():
             port.send(message)
-            #print_message(message)
+            # print_message(message)
             # Check if the message is a note on or note off message
             if message.type == "note_on":
                 # Extract the note number and velocity from the message
