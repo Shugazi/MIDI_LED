@@ -4,7 +4,7 @@ import mido
 # port = mido.open_output('Midi Through:Midi Through Port-0 14:0')
 # or
 port = mido.open_output("CH345:CH345 MIDI 1 20:0")
-file_name = 'The Legend of Zelda Ocarina of Time - Song of Storms.mid'
+file_name = f"Zelda - Ocarina of Time - Great Fairy's fountain.mid"
 
 from rpi_ws281x import PixelStrip, Color
 import mido
