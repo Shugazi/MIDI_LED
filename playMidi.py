@@ -12,7 +12,8 @@ elif file_option == 2:
     file_name = "Ramin_Djawadi_-_Westworld_Theme.mid"
 elif file_option == 3:
     file_name = "The Legend of Zelda Ocarina of Time - Song of Storms.mid"
-
+elif file_option == 4:
+    file_name = "Dr Dre.mid"
 from rpi_ws281x import PixelStrip, Color
 import mido
 import time
